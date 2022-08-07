@@ -1,0 +1,70 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Park Zeus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static "css/master.css" %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body class="park-zeus-wrap">   
+    <img class="img-fluid zeus-top-border" src="{% static 'images/Group 3.png' %}">
+<header class="park-zeus-header">
+    <div class="container parkzeus-logo-mob">
+        <a class="navbar-brand logo-navbrand bosch-logo-zeus" href="#">
+          <img class="desktop-zeus bosch-main-logo" src="{% static 'images/Logo.png' %}">
+          <img class="mobile-zeus" src="{% static 'images/PZ_Logo.png' %}">
+        </a>
+    </div>
+    <nav class="navbar navbar-expand-md ">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+          <img class="desktop-zeus" src="{% static 'images/PZ_Logo.png' %}">
+          <img class="mobile-zeus bosch-main-logo" src="{% static 'images/Logo.png'  %}">
+        </a>  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>   
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}">Our Solutions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}">Whys us?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}">Segments Catered</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Brouchers</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </nav>  
+</header>
+
+<article class="park-zeus-article-wrap">
+    <section class="yourpartner-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 align-self-center">
+                    <h1><span>Your Partner in </span><br><span>Everything<br> Parking.</span></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
+{% block content %}
+{% endblock content %}

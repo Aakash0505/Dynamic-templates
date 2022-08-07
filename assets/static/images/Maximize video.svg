@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.954" height="26.954" viewBox="0 0 26.954 26.954">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Group_4269" data-name="Group 4269" transform="translate(-1740 -799)">
+    <path id="maximize" class="cls-1" d="M58.954,32v6.738H57.269V34.876l-8.67,8.67-1.191-1.191,8.67-8.67H52.215V32Zm-16.6,15.408-8.67,8.67V52.215H32v6.738h6.738V57.269H34.876l8.67-8.67Z" transform="translate(1708 767)"/>
+    <path id="maximize-2" data-name="maximize" class="cls-1" d="M58.954,32v6.738H57.269V34.876l-8.67,8.67-1.191-1.191,8.67-8.67H52.215V32Zm-16.6,15.408-8.67,8.67V52.215H32v6.738h6.738V57.269H34.876l8.67-8.67Z" transform="translate(1798.954 767) rotate(90)"/>
+  </g>
+</svg>

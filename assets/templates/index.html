@@ -1,0 +1,933 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Park Zeus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static "css/master.css" %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body class="park-zeus-wrap">   
+    <img class="img-fluid zeus-top-border" src="{% static 'images/Group 3.png' %}">
+<header class="park-zeus-header">
+    <div class="container parkzeus-logo-mob">
+        <a class="navbar-brand logo-navbrand bosch-logo-zeus" href="#">
+          <img class="desktop-zeus bosch-main-logo" src="{% static 'images/Logo.png' %}">
+          <img class="mobile-zeus" src="{% static 'images/PZ_Logo.png' %}">
+        </a>
+    </div>
+    <nav class="navbar navbar-expand-md ">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+          <img class="desktop-zeus" src="{% static 'images/PZ_Logo.png' %}">
+          <img class="mobile-zeus bosch-main-logo" src="{% static 'images/Logo.png'  %}">
+        </a>  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>   
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#parkzeus-tabs-section">Our Solutions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Whys us?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Segments Catered</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Brouchers</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </nav>  
+</header>
+<article class="park-zeus-article-wrap">
+    <section class="yourpartner-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 align-self-center">
+                    <h1><span>Your Partner in </span><br><span>Everything<br> Parking.</span></h1>
+                </div>
+                 <div class="col-md-7">
+                  <div class="popup-video-parkzeus video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/IbW-HncqpPU" data-target="#popupvideo">      
+                    <div class="play-button-zeus hideonpopup">
+                      <img src="{% static 'images/Play button.svg' %}">
+                    </div>
+                    <div class="max-button-zeus " style="display:none">
+                      <img src="{% static 'images/Maximize video.svg' %}">
+                    </div>
+                  </div>
+                  <div class="modal fade" id="popupvideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered popup-video-dialog modal-lg modal-md modal-sm" role="document">
+                    <div class="modal-content popup-video-modalcont">
+                      <div class="modal-body popup-video-modalbody">
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>        
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        </div>	
+                      </div>
+                    </div>
+                    </div>
+                  </div> 
+                 </div>
+            </div>
+            <div class="row partner-box">
+              {% for post in posts %}
+                <div class="col">
+                  <div class="partner-box-sub">
+                    <div><img src="{% static 'images/Group 483.svg' %}"></div>
+                    <div>
+                      <a class="nav-link  text-white" href="{% url 'smart' %}">{{posts.title}}</a>
+                      <p>{{posts.text}}</p>
+                    </div>
+                   </div>
+                </div>
+              {% endfor %}  
+            </div>          
+        </div>
+    </section>
+    <section class="seamls-parking-main">
+        <div class="container">
+         <h1>Seamless parking experience for seekers<br> & providers, every time.</h1>
+         <div class="row">
+             <div class="col-md-8">
+                <img class="img-fluid" src="{% static 'images/Bosch_BBM_AVP_L.png' %}">
+             </div>
+             <div class="col-md-4">
+                 <p>Parkzeus enables an end-to-end smarter parking experience, 
+                  to help you make the best out of your business. With multiple partners,
+                   multiple customization options & the Bosch advantage, craft parking solutions as per your specific needs to each detail.
+                 </p>
+            </div>
+         </div>
+        </div>
+    </section>
+    <section class="park-zeus-infograp">
+      <div class="container">
+        <h1>One stop for all your parking related needs.</h1>
+        <p class="park-zeus-infograppara">Build parking infrastructure from ground up or upgrade your existing infrastructure. We are here for it all.</p>
+        <div class="infograph-bg ">
+            <div class="row infog-row1">
+              <div class="col-lg-7 col-6"></div>
+              <div class="col-lg-4 col-6">
+                <a class="access-control-zeus nav-link " href="{% url 'access_control' %}">Access Control</a>
+                <p>With Parkzeus, design a contactless & secure facility entrance experience. Choose what’s best for your business from new & innovative technologies -</p>
+                <ul>
+                  <li>ANPR cameras</li>
+                  <li>QR Code Scanner</li>
+                  <li>RFID</li>
+                  <li>ID card reader</li>
+                  <li>Fast Tag</li>
+                </ul>
+              </div>         
+            </div>
+            <div class="row infog-row2">
+              <div class="col-lg-1 col-0"></div>
+              <div class="col-lg-4 col-6">
+                <a class="availablity-zeus nav-link" href="{% url 'guidance' %}">Guidance</a>
+                <p>With navigational intelligence, ensure hassle-free & efficient parking experience</p>
+                <ul>
+                  <li>Above Ground Sensor</li>
+                  <li>On-ground/In Ground Sensor</li>
+                  <li>IGLED</li>
+                </ul>
+              </div>
+              <div class="col-lg-7 col-6"></div>            
+            </div>
+            <div class="row infog-row3">
+              <div class="col-lg-7 col-6"></div>
+              <div class="col-lg-4 col-6">
+                <a class="mobileapp-zeus nav-link" href="{% url 'availability' %}">Availability</a>
+                <p>Track & monitor your parking spaces in real time.</p>
+                <ul>
+                  <li>Camera Based Counte</li>
+                  <li>In/Out Counter</li>
+                  <li>Slot Sensor</li>
+                  <li>EPLD</li>
+                </ul>
+              </div>         
+            </div>
+            <div class="row infog-row4">
+              <div class="col-lg-1 col-0"></div>
+              <div class="col-lg-4 col-6">
+                <a class="guidance-zeus nav-link" href="{% url 'mobile_application'%}">Mobile Application</a>
+                <p>Front end white-label application for the end parking space users</p>
+                <ul>
+                  <li>Availability of space on Application</li>
+                  <li>Reservations</li>
+                  <li>Vehicle Management Services</li>
+                  <li>Value Added Services</li>
+                </ul>
+              </div>
+              <div class="col-lg-7 col-6"></div>            
+            </div>
+            <div class="row infog-row5">
+              <div class="col-lg-7 col-6"></div>
+              <div class="col-lg-4 col-6">
+                <a class="digitaldash-zeus" href="{% url 'digital_dashboard' %}">Digital Dashboard</a>
+                <p>Crucial dashboards & reports allowing you to access all the important decisions & make informed decisions with your real estate</p>
+              </div>         
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="untapp-potential">
+        <div class="container">
+            <h1>Untapped potential of your parking lot, now unlocked</h1>
+            <p>Globally benchmarked solution with smart parking solutions in smart campuses by KPMG</p>
+                <div class="row untapped-box">
+                    <div class="col">
+                      <img src="{% static 'images/Group 4332.png' %}">
+                       <p class="text-center">Enhanced<br><b>Customer Experience</b><br>& <b>Property Value</b></p>
+                        
+                    </div>
+                    <div class="col">
+                      <img src="{% static 'images/Group 4333.png' %}">
+                       <p class="text-center">Reduce<br><b>Human Intervention</b></p>
+                    </div>
+                    <div class="col">
+                      <img src="{% static 'images/Group 4334.png' %}">
+                       <p class="text-center"><b>Safe & Sustainable</b><br>Properties</p>
+                    </div>
+                    <div class="col">
+                      <img src="{% static 'images/Group 4335.png' %}">
+                       <p class="text-center">Revenue from<br><b>Value Added Services</b></p>                     
+                    </div>
+                    <div class="col">
+                      <img src="{% static 'images/Group 4336.png' %}">
+                       <p class="text-center"><b>Bosch Advantage</b></p>
+                    </div>   
+                </div> 
+        </div>
+    </section>
+
+<section class="parkzeus-tabs-sec" id="parkzeus-tabs-section">
+<div class="container">
+  <h1>Solutions tailor made for your business needs</h1>
+  <div class="ProductNav_Wrapper">
+  <nav id="ProductNav" class="ProductNav dragscroll mouse-scroll" role="tablist">
+    <div id="ProductNavContents" class="nav ProductNav_Contents">
+      <a class="ProductNav_Link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Residential Establishments</a>
+      <a class="ProductNav_Link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Corporates</a>
+      <a class="ProductNav_Link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Commercial Complexes</a>  
+    <span id="Indicator" class="ProductNav_Indicator" style="display:none"></span>
+    </div>
+</nav>
+  <button id="AdvancerLeft" class="Advancer Advancer_Left" type="button">
+    <svg class="Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z"/></svg>
+  </button>
+  <button id="AdvancerRight" class="Advancer Advancer_Right" type="button">
+    <svg class="Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M105.56 985.817L553.53 512 105.56 38.183l-85.857 81.173 409.6 433.23v-81.172l-409.6 433.23 85.856 81.174z"/></svg>
+  </button>
+</div>
+</div>
+  <div class="card">
+    <div class="card-body">
+      <div class="container">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row">
+            <div class="col-lg-8 col-12 align-self-center">
+              <img class="img-fluid" src="{% static 'images/Mask Group 58.png' %}">
+            </div>
+            <div class="col-lg-4 col-12">
+              <div class="park-zeusfirsttab">
+              <h6>Challenges Addressed</h6>
+              <ul>
+                <li>Segregated parking visibility, access and navigation for residents, visitors​ and e-commerce vendors​</li>
+                <li>Integrated ecosystem</li>
+                <li>EV charging</li>
+                <li>High manpower costs</li>
+                <li>Vehicle database and access automation​ integration</li>
+              </ul>
+              </div>
+              <div class="park-zeussecondtab">
+                <h6 class="parkzeu-benef">Benefits</h6>
+              <ul>
+                <li>Remote Monitoring</li>
+                <li>Over-speed detection</li>
+                <li>Wrong Way Driving Detection</li>
+                <li>23000 hours ​saved in getting access/year for visitors and residents​</li>
+                <li>INR 5 lakhs/year in security ​cost reduction</li>
+                <li>75% reduction in over-speeding incidents​</li>
+              </ul>
+              </div>                                                                          
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="row">
+            <div class="col-lg-8 col-12 align-self-center">
+              <img class="img-fluid" src="{% static 'images/Mask Group 59.png' %}">
+            </div>
+            <div class="col-lg-4 col-12">
+              <div class="park-zeusfirsttab">
+              <h6>Challenges Addressed</h6>
+              <ul>
+                <li>Congestions on Roads</li>
+                <li>Facility Operations Efficieny</li>
+                <li>Safety Related Issues</li>
+                <li>Congestions on roads</li>
+                <li>Employee Efficiency</li>
+                <li class="parkze-nobullets">&nbsp;</li>
+                <li class="parkze-nobullets">&nbsp;</li>
+                <li class="parkze-nobullets">&nbsp;</li>
+              </ul>
+              </div>
+              <div class="park-zeussecondtab">
+                <h6 class="parkzeu-benef">Benefits</h6>
+              <ul>
+                <li>Cost reduction in Security 40%</li>
+                <li>Smart Campus Transformation</li>
+                <li>Property Value Enhancement</li>
+                <li>EV Charging</li>
+                <li>Faster Occupancy</li>
+                <li>Reduced Leakage​</li>
+                <li>Car Services</li>
+                <li>RAd-revenue from commercial</li>
+              </ul>
+              </div>                                                                          
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <div class="row">
+            <div class="col-lg-8 col-12 align-self-center">
+              <img class="img-fluid" src="{% static 'images/Mask Group 57.png' %}">
+            </div>
+            <div class="col-lg-4 col-12">
+              <div class="park-zeusfirsttab">
+              <h6>Challenges Addressed</h6>
+              <ul>
+                <li>Ineffective utilization of parking spaces​</li>
+                <li>Misuse of parking spaces due to overnight parking</li>
+                <li>Leakage of payment collections impacting parking revenue</li>
+                <li>Poor manpower planning because of lack of visibility on historical occupancy data</li>
+                <li>Congestion on roads at peak hours</li>
+                <li>Parking equipment failure detection</li>
+              </ul>
+              </div>
+              <div class="park-zeussecondtab">
+                <h6 class="parkzeu-benef">Benefits</h6>
+              <ul>
+                <li>Reduction in time lost for finding parking</li>
+                <li>Contact-less payments</li>
+                <li>Reduction in vehicle damage/accidents</li>
+                <li>Estate allocation management for 2/4 wheelers</li>
+                <li class="parkze-nobullets">&nbsp;</li>
+                <li class="parkze-nobullets">&nbsp;</li>
+                <li class="parkze-nobullets">&nbsp;</li>
+              </div>                                                                          
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+<!--------------------- SECOND INSTANCE ------------------------->
+
+<div class="container" style="display:none">
+  <div class="ProductNav_Wrapper">
+  
+  <nav id="ProductNav2" class="ProductNav dragscroll mouse-scroll" role="tablist">
+    <div id="ProductNavContents2" class="nav ProductNav_Contents">
+      <a class="ProductNav_Link active" id="home-tab2" data-toggle="tab" href="#home2" role="tab" aria-controls="home2" aria-selected="true">Home</a>
+      <a class="ProductNav_Link" id="profile-tab2" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile2" aria-selected="false">Profile</a>
+      <a class="ProductNav_Link" id="contact-tab2" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">Contact</a>     
+    <span id="Indicator2" class="ProductNav_Indicator"></span>
+    </div>
+</nav>
+  <button id="AdvancerLeft2" class="Advancer Advancer_Left" type="button">
+    <svg class="Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z"/></svg>
+  </button>
+  <button id="AdvancerRight2" class="Advancer Advancer_Right" type="button">
+    <svg class="Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M105.56 985.817L553.53 512 105.56 38.183l-85.857 81.173 409.6 433.23v-81.172l-409.6 433.23 85.856 81.174z"/></svg>
+  </button>
+</div>
+</div>
+</section>
+
+<section class="our-partners-zeus">
+  <div class="container">
+    <h1>Our Partners</h1>
+    <div class="row">
+      <div class="col-md-3 col-6">
+        <img class="img-fluid" src="{% static 'images/Mask Group 60.png' %}">
+      </div>
+      <div class="col-md-3 col-6">
+        <img class="img-fluid" src="{% static 'images/Mask Group 61.png'%}">
+      </div>
+      <div class="col-md-3 col-6">
+        <img class="img-fluid" src="{% static 'images/Mask Group 62.png' %}">
+      </div>
+      <div class="col-md-3 col-6">
+        <img class="img-fluid" src="{% static 'images/Mask Group 63.png' %}">
+      </div>
+    </div>
+    <div class="row sub-partnerszeus">
+      <div class="col-md-3 col-6">
+        <img class="img-fluid" src="{% static 'images/Mask Group 64.png' %}">
+      </div>
+      <div class="col-md-3 col-6">
+        <img class="img-fluid" src="{% static 'images/Mask Group 65.png' %}">
+      </div>
+      <div class="col-md-3 col-6">
+        <img class="img-fluid" src="{% static 'images/Mask Group 66.png' %}">
+      </div>
+  </div>
+</section>
+
+<section class="getintouch-withus">
+  <div class="container">
+    <h1>Get In Touch With Us</h1>
+    <p>Learn more about how we can work together to enable the next generation of parking. Contact us today to leverage the potential of Parkzeus and drive business value.</p>
+      <form action="#">
+        <div class="row">
+        <div class="col-md-6">
+          <div class="form-group" id="name">
+            <label for="usr">Name*</label>
+            <input type="text" class="form-control" id="usr" name="username">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="usr">Organisation*</label>
+            <input type="text" class="form-control" id="org" name="Organisation" >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="usr">Business Email*</label>
+            <input type="email" class="form-control" id="businsemail" name="businsemail" >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="usr">Phone*</label>
+            <input type="number" class="form-control" id="phone" name="phone" >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="usr">Industry Sector*</label>
+            <input type="text" class="form-control" id="Industrysect" name="Industrysect" >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="usr">Additional Information</label>
+            <input type="text" class="form-control" id="addinfo" name="addinfo" >
+          </div>
+        </div>
+        <div class="g-recaptcha ml-3 mb-3" data-sitekey="your_site_key"></div>
+        </div>
+        <div>
+          <label class="checkbox-wrap">I have read the <span class="data-prot-notice">data protection notice</span>
+            <input type="checkbox" >
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <p class="mandatory-fields">* Please fill in mandatory fields.</p>
+        <button type="submit" class="btn btn-primary sumbmit-zeusbutton">Submit</button>
+        <button type="submit" id="download-brouchure" class="btn btn-primary download-brouchre" disabled>Download Brouchere</button>
+      </form>
+  </div>
+</section>
+</article>
+
+
+
+<footer class="park-zeusfooter-wrap">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-5">
+    <h5>ParkZeus</h5>
+    <p>A transformative parking solution that redefines parking management for parking providers and offers an unmatched, hassle free parking solution for end-users.</p>
+  </div>
+  <ul class="col-md-7 social-zeus-order">
+    <li>
+      <a href="#"><img src="{% static 'images/facebook-frame.svg' %}"></a>
+    </li>
+    <li>
+      <a href="#"><img src="{% static 'images/youtube-frame.svg' %}"></a>
+    </li>
+    <li>
+      <a href="#"><img src="{% static 'images/linkedin-frame.svg' %}"></a>
+    </li>
+    <li>
+      <a href="#"><img src="{% static 'images/twitter-frame.svg' %}"></a>
+    </li>
+    <li>
+      <a href="#"><img src="{% static 'images/instagram-frame.svg' %}"></a>
+    </li>
+  </ul>
+  <div class=" col-md-3">
+    <h6>Bosch India</h6>
+  </div>
+  <ul class=" col-md-9 social-zeus-order4">
+    <li>
+      <span>Mail us :<a href="#">help@parkzeus.com</a></span>
+    </li>
+    <li>
+      <a href="#">Our Solutions</a>
+    </li>
+    <li>
+      <a href="#">Why us?</a>
+    </li>
+    <li>
+      <a href="#">Segments Catered</a>
+    </li>
+  </ul>
+  </div>
+  <div class="footercont-flex">
+  <ul class="parkright-zeus">
+    <li>
+      <span>© Bosch Limited 2022, all rights reserved</span>
+    </li> 
+    <li>
+      <a>Corporate information</a>
+    </li>
+    <li>
+      <a href="#">Legal notice</a>
+    </li>
+    <li>
+      <a href="#">Data protection notice</a>
+    </li>
+    <li>
+      <a href="#">Privacy settings</a>
+    </li>
+    <li>
+      <a href="#">Terms & Condition</a>
+    </li>
+    <li>
+      <a href="#">Ver 1.1</a>
+    </li>
+  </ul>
+  <a href="#" class="scrollup">
+    <img src="assets/images/Path 804.png">
+  </a>
+  </div> 
+</div>
+</footer>
+
+<script>
+ $(document).ready(function() {
+
+
+var $videoSrc;  
+$('.video-btn').click(function() {
+    $videoSrc = $(this).data( "src" );
+	$(".hideonpopup").hide();
+});
+console.log($videoSrc);
+
+  
+$('#popupvideo').on('shown.bs.modal', function (e) {
+    
+$("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" ); 
+})
+  
+
+$('#popupvideo').on('hide.bs.modal', function (e) {
+    $("#video").attr('src',$videoSrc); 
+	$(".hideonpopup").show();
+}) 
+});
+</script>
+
+<script>
+  const inputs = $('input'), downloadBtn = $('#download-brouchure');
+inputs.on('input', function(e){
+  var invalid = inputs.is(function(index, element){
+      return !$(element).val().trim();
+  });
+  if(invalid){
+      downloadBtn.addClass("isDisabled").prop("disabled", true);
+  } else {
+      downloadBtn.removeClass("isDisabled").prop("disabled", false);
+  }
+});
+</script>
+
+
+<script>
+  //page scroll top
+$(document).ready(function() { 
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    }); 
+    
+//Scroll Top Icon 
+    $('.scrollup').click(function() {
+        $("html, body").animate({scrollTop: 0}, 600);
+        return false;
+    });
+});
+</script>
+
+
+<script>
+var SETTINGS = {
+    navBarTravelling: false,
+    navBarTravelDirection: "",
+ navBarTravelDistance: 150
+}
+
+var colours = {
+    0: "#fead00"
+
+}
+
+document.documentElement.classList.remove("no-js");
+document.documentElement.classList.add("js");
+
+// Out advancer buttons
+var AdvancerLeft = document.getElementById("AdvancerLeft");
+var AdvancerRight = document.getElementById("AdvancerRight");
+
+var AdvancerLeft2 = document.getElementById("AdvancerLeft2");
+var AdvancerRight2 = document.getElementById("AdvancerRight2");
+
+// the indicator
+var Indicator = document.getElementById("Indicator");
+var ProductNav = document.getElementById("ProductNav");
+var ProductNavContents = document.getElementById("ProductNavContents");
+
+var Indicator2 = document.getElementById("Indicator2");
+var ProductNav2 = document.getElementById("ProductNav2");
+var ProductNavContents2 = document.getElementById("ProductNavContents2");
+
+ProductNav.setAttribute("data-overflowing", determineOverflow(ProductNavContents, ProductNav));
+
+ProductNav2.setAttribute("data-overflowing", determineOverflow(ProductNavContents2, ProductNav2));
+
+// Set the indicator
+moveIndicator(ProductNav.querySelector("[aria-selected=\"true\"]"), colours[0]);
+
+moveIndicator2(ProductNav2.querySelector("[aria-selected=\"true\"]"), colours[0]);
+
+// Handle the scroll of the horizontal container
+var last_known_scroll_position = 0;
+var ticking = false;
+
+function doSomething(scroll_pos) {
+    ProductNav.setAttribute("data-overflowing", determineOverflow(ProductNavContents, ProductNav));
+    ProductNav2.setAttribute("data-overflowing", determineOverflow(ProductNavContents2, ProductNav2));
+}
+
+ProductNav.addEventListener("scroll", function() {
+    last_known_scroll_position = window.scrollY;
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            doSomething(last_known_scroll_position);
+            ticking = false;
+        });
+    }
+    ticking = true;
+});
+
+ProductNav2.addEventListener("scroll", function() {
+    last_known_scroll_position = window.scrollY;
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            doSomething(last_known_scroll_position);
+            ticking = false;
+        });
+    }
+    ticking = true;
+});
+
+
+AdvancerLeft.addEventListener("click", function() {
+// If in the middle of a move return
+    if (SETTINGS.navBarTravelling === true) {
+        return;
+    }
+    // If we have content overflowing both sides or on the left
+    if (determineOverflow(ProductNavContents, ProductNav) === "left" || determineOverflow(ProductNavContents, ProductNav) === "both") {
+        // Find how far this panel has been scrolled
+        var availableScrollLeft = ProductNav.scrollLeft;
+        // If the space available is less than two lots of our desired distance, just move the whole amount
+        // otherwise, move by the amount in the settings
+        if (availableScrollLeft < SETTINGS.navBarTravelDistance * 2) {
+            ProductNavContents.style.transform = "translateX(" + availableScrollLeft + "px)";
+        } else {
+            ProductNavContents.style.transform = "translateX(" + SETTINGS.navBarTravelDistance + "px)";
+        }
+        // We do want a transition (this is set in CSS) when moving so remove the class that would prevent that
+        ProductNavContents.classList.remove("ProductNav_Contents-no-transition");
+        // Update our settings
+        SETTINGS.navBarTravelDirection = "left";
+        SETTINGS.navBarTravelling = true;
+    }
+    // Now update the attribute in the DOM
+    ProductNav.setAttribute("data-overflowing", determineOverflow(ProductNavContents, ProductNav));
+});
+AdvancerLeft2.addEventListener("click", function() {
+// If in the middle of a move return
+    if (SETTINGS.navBarTravelling === true) {
+        return;
+    }
+    // If we have content overflowing both sides or on the left
+    if (determineOverflow(ProductNavContents2, ProductNav2) === "left" || determineOverflow(ProductNavContents2, ProductNav2) === "both") {
+        // Find how far this panel has been scrolled
+        var availableScrollLeft = ProductNav2.scrollLeft;
+        // If the space available is less than two lots of our desired distance, just move the whole amount
+        // otherwise, move by the amount in the settings
+        if (availableScrollLeft < SETTINGS.navBarTravelDistance * 2) {
+            ProductNavContents2.style.transform = "translateX(" + availableScrollLeft + "px)";
+        } else {
+            ProductNavContents2.style.transform = "translateX(" + SETTINGS.navBarTravelDistance + "px)";
+        }
+        // We do want a transition (this is set in CSS) when moving so remove the class that would prevent that
+        ProductNavContents2.classList.remove("ProductNav_Contents-no-transition");
+        // Update our settings
+        SETTINGS.navBarTravelDirection = "left";
+        SETTINGS.navBarTravelling = true;
+    }
+    // Now update the attribute in the DOM
+    ProductNav2.setAttribute("data-overflowing", determineOverflow(ProductNavContents2, ProductNav2));
+});
+
+AdvancerRight.addEventListener("click", function() {
+    // If in the middle of a move return
+    if (SETTINGS.navBarTravelling === true) {
+        return;
+    }
+    // If we have content overflowing both sides or on the right
+    if (determineOverflow(ProductNavContents, ProductNav) === "right" || determineOverflow(ProductNavContents, ProductNav) === "both") {
+        // Get the right edge of the container and content
+        var navBarRightEdge = ProductNavContents.getBoundingClientRect().right;
+        var navBarScrollerRightEdge = ProductNav.getBoundingClientRect().right;
+        // Now we know how much space we have available to scroll
+        var availableScrollRight = Math.floor(navBarRightEdge - navBarScrollerRightEdge);
+        // If the space available is less than two lots of our desired distance, just move the whole amount
+        // otherwise, move by the amount in the settings
+        if (availableScrollRight < SETTINGS.navBarTravelDistance * 2) {
+            ProductNavContents.style.transform = "translateX(-" + availableScrollRight + "px)";
+        } else {
+            ProductNavContents.style.transform = "translateX(-" + SETTINGS.navBarTravelDistance + "px)";
+        }
+        // We do want a transition (this is set in CSS) when moving so remove the class that would prevent that
+        ProductNavContents.classList.remove("ProductNav_Contents-no-transition");
+        // Update our settings
+        SETTINGS.navBarTravelDirection = "right";
+        SETTINGS.navBarTravelling = true;
+    }
+    // Now update the attribute in the DOM
+    ProductNav.setAttribute("data-overflowing", determineOverflow(ProductNavContents, ProductNav));
+});
+AdvancerRight2.addEventListener("click", function() {
+    // If in the middle of a move return
+    if (SETTINGS.navBarTravelling === true) {
+        return;
+    }
+    // If we have content overflowing both sides or on the right
+    if (determineOverflow(ProductNavContents2, ProductNav2) === "right" || determineOverflow(ProductNavContents2, ProductNav2) === "both") {
+        // Get the right edge of the container and content
+        var navBarRightEdge = ProductNavContents2.getBoundingClientRect().right;
+        var navBarScrollerRightEdge = ProductNav2.getBoundingClientRect().right;
+        // Now we know how much space we have available to scroll
+        var availableScrollRight = Math.floor(navBarRightEdge - navBarScrollerRightEdge);
+        // If the space available is less than two lots of our desired distance, just move the whole amount
+        // otherwise, move by the amount in the settings
+        if (availableScrollRight < SETTINGS.navBarTravelDistance * 2) {
+            ProductNavContents2.style.transform = "translateX(-" + availableScrollRight + "px)";
+        } else {
+            ProductNavContents2.style.transform = "translateX(-" + SETTINGS.navBarTravelDistance + "px)";
+        }
+        // We do want a transition (this is set in CSS) when moving so remove the class that would prevent that
+        ProductNavContents2.classList.remove("ProductNav_Contents-no-transition");
+        // Update our settings
+        SETTINGS.navBarTravelDirection = "right";
+        SETTINGS.navBarTravelling = true;
+    }
+    // Now update the attribute in the DOM
+    ProductNav2.setAttribute("data-overflowing", determineOverflow(ProductNavContents2, ProductNav2));
+});
+
+ProductNavContents.addEventListener(
+    "transitionend",
+    function() {
+        // get the value of the transform, apply that to the current scroll position (so get the scroll pos first) and then remove the transform
+        var styleOfTransform = window.getComputedStyle(ProductNavContents, null);
+        var tr = styleOfTransform.getPropertyValue("-webkit-transform") || styleOfTransform.getPropertyValue("transform");
+        // If there is no transition we want to default to 0 and not null
+        var amount = Math.abs(parseInt(tr.split(",")[4]) || 0);
+        ProductNavContents.style.transform = "none";
+        ProductNavContents.classList.add("ProductNav_Contents-no-transition");
+        // Now lets set the scroll position
+        if (SETTINGS.navBarTravelDirection === "left") {
+            ProductNav.scrollLeft = ProductNav.scrollLeft - amount;
+        } else {
+            ProductNav.scrollLeft = ProductNav.scrollLeft + amount;
+        }
+        SETTINGS.navBarTravelling = false;
+    },
+    false
+);
+ProductNavContents2.addEventListener(
+    "transitionend",
+    function() {
+        // get the value of the transform, apply that to the current scroll position (so get the scroll pos first) and then remove the transform
+        var styleOfTransform = window.getComputedStyle(ProductNavContents2, null);
+        var tr = styleOfTransform.getPropertyValue("-webkit-transform") || styleOfTransform.getPropertyValue("transform");
+        // If there is no transition we want to default to 0 and not null
+        var amount = Math.abs(parseInt(tr.split(",")[4]) || 0);
+        ProductNavContents2.style.transform = "none";
+        ProductNavContents2.classList.add("ProductNav_Contents-no-transition");
+        // Now lets set the scroll position
+        if (SETTINGS.navBarTravelDirection === "left") {
+            ProductNav2.scrollLeft = ProductNav2.scrollLeft - amount;
+        } else {
+            ProductNav2.scrollLeft = ProductNav2.scrollLeft + amount;
+        }
+        SETTINGS.navBarTravelling = false;
+    },
+    false
+);
+
+// Handle setting the currently active link
+ProductNavContents.addEventListener("click", function(e) {
+var links = [].slice.call(document.querySelectorAll("#ProductNavContents .ProductNav_Link"));
+links.forEach(function(item) {
+item.setAttribute("aria-selected", "false");
+})
+e.target.setAttribute("aria-selected", "true");
+// Pass the clicked item and it's colour to the move indicator function
+moveIndicator(e.target, colours[links.indexOf(e.target)]);
+});
+ProductNavContents2.addEventListener("click", function(e) {
+var links = [].slice.call(document.querySelectorAll("#ProductNavContents2 .ProductNav_Link"));
+links.forEach(function(item) {
+item.setAttribute("aria-selected", "false");
+})
+e.target.setAttribute("aria-selected", "true");
+// Pass the clicked item and it's colour to the move indicator function
+moveIndicator2(e.target, colours[links.indexOf(e.target)]);
+});
+
+// var count = 0;
+function moveIndicator(item, color) {
+    var textPosition = item.getBoundingClientRect();
+    var container = ProductNavContents.getBoundingClientRect().left;
+    var distance = textPosition.left - container;
+ var scroll = ProductNavContents.scrollLeft;
+    Indicator.style.transform = "translateX(" + (distance + scroll) + "px) scaleX(" + textPosition.width * 0.01 + ")";
+// count = count += 100;
+// Indicator.style.transform = "translateX(" + count + "px)";
+
+    if (color) {
+        Indicator.style.backgroundColor = color;
+    }
+}
+
+// var count = 0;
+function moveIndicator2(item, color) {
+    var textPosition = item.getBoundingClientRect();
+    var container = ProductNavContents2.getBoundingClientRect().left;
+    var distance = textPosition.left - container;
+ var scroll = ProductNavContents2.scrollLeft;
+    Indicator2.style.transform = "translateX(" + (distance + scroll) + "px) scaleX(" + textPosition.width * 0.01 + ")";
+// count = count += 100;
+// Indicator.style.transform = "translateX(" + count + "px)";
+
+    if (color) {
+        Indicator2.style.backgroundColor = color;
+    }
+}
+
+function determineOverflow(content, container) {
+    var containerMetrics = container.getBoundingClientRect();
+    var containerMetricsRight = Math.floor(containerMetrics.right);
+    var containerMetricsLeft = Math.floor(containerMetrics.left);
+    var contentMetrics = content.getBoundingClientRect();
+    var contentMetricsRight = Math.floor(contentMetrics.right);
+    var contentMetricsLeft = Math.floor(contentMetrics.left);
+ if (containerMetricsLeft > contentMetricsLeft && containerMetricsRight < contentMetricsRight) {
+        return "both";
+    } else if (contentMetricsLeft < containerMetricsLeft) {
+        return "left";
+    } else if (contentMetricsRight > containerMetricsRight) {
+        return "right";
+    } else {
+        return "none";
+    }
+}
+
+/*------------------- ACTIVE LINK POSITION ------------------------*/
+$("#ProductNav .ProductNav_Link").click(function() {
+   
+   centerLI(this, '#ProductNav');
+
+ });
+
+$("#ProductNav2 .ProductNav_Link").click(function() {
+   
+   centerLI(this, '#ProductNav2');
+
+ });
+
+ //http://stackoverflow.com/a/33296765/350421
+ function centerLI(target, outer) {
+   var out = $(outer);
+   var tar = $(target);
+   var x = out.width() - 50;
+   var y = tar.outerWidth(true);
+   var z = tar.index();
+   var q = 0;
+   var m = out.find('.ProductNav_Link');
+   for (var i = 0; i < z; i++) {
+     q += $(m[i]).outerWidth(true);
+   }
+   
+ //out.scrollLeft(Math.max(0, q - (x - y)/2));
+ var xy = x - y;
+ if(q > xy){
+out.animate({
+  scrollLeft: Math.max(0, q - (x - y) + 100)
+}, 500);
+ } else {
+ out.animate({
+  scrollLeft: Math.max(0, q/2 - 50)
+}, 500);    
+ }
+
+ }
+
+
+$(document).ready(function() {
+$('.mouse-scroll').mousewheel(function(e, delta) {
+this.scrollLeft -= (delta * 50);
+e.preventDefault();
+});
+});
+
+Resources
+</script>
+
+
+</body>
+</html>
